@@ -1,24 +1,79 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22684"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="MLImageRecognizer" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="YIF-YH-Mhs">
+                                <rect key="frame" x="25.813153961135868" y="111.99999999999898" width="340" height="390.00000000000011"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Please upload image" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Iwv-KR-Xlw">
+                                <rect key="frame" x="25.813153961135868" y="544.99999999999613" width="340" height="75"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="75" id="0Cl-rf-UQC"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="i4A-jo-QA4">
+                                <rect key="frame" x="136.10911808669584" y="665.99999999999568" width="120" height="60"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="Fzp-pJ-5eT"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Upload">
+                                    <fontDescription key="titleFontDescription" type="system" weight="semibold" pointSize="17"/>
+                                    <color key="baseBackgroundColor" systemColor="systemIndigoColor"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="uploadClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="wij-ew-xGt"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="YIF-YH-Mhs" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="1Zk-Ro-HKH"/>
+                            <constraint firstItem="YIF-YH-Mhs" firstAttribute="trailing" secondItem="Iwv-KR-Xlw" secondAttribute="trailing" id="Axi-LC-tY9"/>
+                            <constraint firstItem="YIF-YH-Mhs" firstAttribute="leading" secondItem="Iwv-KR-Xlw" secondAttribute="leading" id="CGy-d5-RKF"/>
+                            <constraint firstItem="i4A-jo-QA4" firstAttribute="top" secondItem="Iwv-KR-Xlw" secondAttribute="bottom" constant="45.999999999999545" id="Kkg-jN-g6N"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="i4A-jo-QA4" secondAttribute="bottom" constant="92.00000000000432" id="Qs2-vJ-d7j"/>
+                            <constraint firstItem="YIF-YH-Mhs" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="25.813153961135868" id="T60-Ga-4Ga"/>
+                            <constraint firstItem="Iwv-KR-Xlw" firstAttribute="centerX" secondItem="i4A-jo-QA4" secondAttribute="centerX" id="YNl-ag-reY"/>
+                            <constraint firstItem="YIF-YH-Mhs" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="52.999999999998977" id="aQq-sF-B27"/>
+                            <constraint firstItem="Iwv-KR-Xlw" firstAttribute="top" secondItem="YIF-YH-Mhs" secondAttribute="bottom" constant="42.999999999997044" id="lOl-bu-jh8"/>
+                            <constraint firstItem="i4A-jo-QA4" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="136.10911808669584" id="wD4-Hi-mAc"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="imageLabel" destination="Iwv-KR-Xlw" id="wYl-0h-xAh"/>
+                        <outlet property="imageView" destination="YIF-YH-Mhs" id="AQ0-gU-xUD"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="139.69465648854961" y="3.5211267605633805"/>
         </scene>
     </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemIndigoColor">
+            <color red="0.34509803921568627" green="0.33725490196078434" blue="0.83921568627450982" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
 </document>
